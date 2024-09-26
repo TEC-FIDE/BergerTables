@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Berger tables</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Berger">
+		<meta name="author" content="Otto Milvang, FIDE id: 1511360">
+
+	</head>
+
+	<body style='background: url(./images/bg.png) repeat;'>
+    <h1 id='txt-header'>Berger tables - PDF</h1>
+    <p id='txt-description'>Make your own Berger tables with up to 50 players or 24 players double round robin.</p>
+			<div style="display: flex;" class="row-fluid">
+    
+				<div id="leftpane"  class="span5 no-gutter">
+          <h3 id='txt-subheader'>Turneringsoppsett</h3>  
+          <p><table border='0'>
+          	<tr style='height:20pt'> 
+          	  <td><span id='txt-language'>Språk:</span></td>	
+          	  <td><select type='text' id='language'><option value="english">English</option></select></td>
+          	</tr>
+          	<tr style='height:20pt'> 
+          	  <td><span id='txt-font'>Font:</span></td>	
+          	  <td><select type='text' id='font'><option value="english">OpenSans</option></select></td>
+          	</tr>
+          	<tr style='height:20pt'> 
+          	  <td><span id='txt-tournament'>Turneringens navn:</span></td>	
+          	  <td><input type='text' size='30' id='input-tournament' value='Min turnering'></td>
+          	</tr>
+          	<tr style='height:20pt'> 
+          	  <td><span id='txt-nofplayers'>Antall spillere:</span></td>	
+          	  <td><input type='hidden' id='oldplayers' value='12'><input type='text' size='3' id='players' value='12'>
+          	 	  &nbsp;&nbsp;<input type='checkbox' id='double'> <span id='txt-doubleround'>Dobbeltrunde</span></td>
+          	</tr>
+          	<tr style='height:20pt' id='swapid'> 
+          	  <td colspan='2'><input type='checkbox' id='swap' checked><span id='txt-reversed'>Reverse the order of the last two rounds of the first cycle</span></td>
+          	</tr>
+          </table></p> 
+					<p><strong><span id='txt-labels'>Labels:</span></strong></p>
+
+					<p>
+            <div id='labellist'>
+            </div>    
+          </p>
+           
+					<p><strong><span id='txt-players'>Spillere:</span></strong></p>
+
+					<p>
+            <div id='playerlist'>
+            </div>    
+          </p>
+          <p><input type='hidden' id='oldrandom' value='false'><input type='checkbox' id='random'><span id='txt-random'>Fordel spillerne i tilfeldig rekkefølge</span></p>
+				</div>
+	      <div id="rightpane"  class="span6">
+					<iframe id=pdf class="preview-pane" type="application/pdf" width="500pt" height="400pt" frameborder="0" style="position:relative;z-index:999"></iframe>
+					<br/>
+					<button id='btn-save'>Lagre som PDF</button>&nbsp;
+					<button id='btn-print'>Skriv ut PDF</button>
+				</div>
+
+			</div>
+		<footer><font size='2'>&copy; 2017-2024 Otto Milvang - <a href="http://www.nordstrandsjakk.no">Nordstrand Sjakklubb</a></font></footer>
+    </body>
+	<!-- Scripts down here
+	<script src="https://unpkg.com/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
+  -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+	<script type="text/javascript" src="fonts.js"></script>
+	<script type="text/javascript" src="berger.js"></script>
+	<script type="text/javascript" src="bergerinit.js"></script>
+</html>
